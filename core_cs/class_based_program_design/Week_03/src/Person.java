@@ -20,6 +20,16 @@ interface IAT {
 
 	boolean wellFormedHelper(int yob);
 
+	IAT youngerIAT(IAT other);
+
+	IAT youngerIATHelp(IAT other, int otherYob);
+
+	IAT youngestParent();
+
+	IAT youngestGrandparent();
+
+	IAT youngestAncInGen(int gen);
+
 }
 
 class Unknown implements IAT {
@@ -61,6 +71,32 @@ class Unknown implements IAT {
 	public boolean wellFormedHelper(int yob) {
 		return true;
 	}
+
+	public IAT youngerIAT(IAT other) {
+		return other;
+	}
+
+	public IAT youngerIATHelp(IAT other, int otherYob) {
+		return other;
+	}
+
+	public IAT youngestParent() {
+
+		return new Unknown();
+	}
+
+	public IAT youngestGrandparent() {
+
+		return new Unknown();
+	}
+
+	public IAT youngestAncInGen(int gen) {
+		if (gen == 0) {
+			return this;
+		} else {
+			return new Unknown();
+		}
+	}
 }
 
 class Person implements IAT {
@@ -99,8 +135,7 @@ class Person implements IAT {
 	public int femaleAncOver40Help() {
 		if (2015 - this.yob > 40 && !this.isMale) {
 			return 1 + this.mom.femaleAncOver40Help() + this.dad.femaleAncOver40Help();
-		}
-		else {
+		} else {
 			return this.mom.femaleAncOver40Help() + this.dad.femaleAncOver40Help();
 		}
 	}
@@ -114,18 +149,47 @@ class Person implements IAT {
 	}
 
 	public boolean wellFormedHelper(int yob) {
-		if(this.yob < yob) {
+		if (this.yob < yob) {
 			return this.mom.wellFormedHelper(this.yob) && this.dad.wellFormedHelper(this.yob);
 		} else {
 			return false;
 		}
-	
+
 	}
 
 	public boolean wellFormed() {
-		return this.mom.wellFormedHelper(this.yob) && this.dad.wellFormedHelper(this.yob) && this.dad.wellFormed() && this.mom.wellFormed();
+		return this.mom.wellFormedHelper(this.yob) && this.dad.wellFormedHelper(this.yob) && this.dad.wellFormed()
+				&& this.mom.wellFormed();
 	}
 
+	public IAT youngerIAT(IAT other) {
+		return other.youngerIATHelp(this, this.yob);
+	}
+
+	public IAT youngerIATHelp(IAT other, int otherYob) {
+		if (this.yob > otherYob) {
+			return this;
+		} else {
+			return other;
+		}
+	}
+
+	public IAT youngestParent() {
+		return this.mom.youngerIAT(this.dad);
+	}
+
+	public IAT youngestGrandparent() {
+
+		return this.mom.youngestParent().youngerIAT(this.dad.youngestParent());
+	}
+
+	public IAT youngestAncInGen(int gen) {
+		if (gen == 0) {
+			return this;
+		} else {
+			return this.mom.youngestAncInGen(gen - 1).youngerIAT(this.dad.youngestAncInGen(gen - 1));
+		}
+	}
 }
 
 //Let’s also assume that we have a list of strings to work with:
@@ -171,34 +235,30 @@ class ExamplesIAT {
 	IAT bree = new Person("Bree", 1981, false, this.claire, this.cameron);
 
 	IAT andrew = new Person("Andrew", 2001, true, this.bree, this.bill);
-
+	
+	
 	boolean testCount(Tester t) {
 		return t.checkExpect(this.andrew.count(), 16) && t.checkExpect(this.david.count(), 1)
 				&& t.checkExpect(this.enid.count(), 0) && t.checkExpect(new Unknown().count(), 0);
 	}
 
 	boolean testFemaleAncOver40(Tester t) {
-		return t.checkExpect(this.andrew.femaleAncOver40(), 7)
-				&& t.checkExpect(this.bree.femaleAncOver40(), 3)
-				&& t.checkExpect(this.darcy.femaleAncOver40(), 1)
-				&& t.checkExpect(this.enid.femaleAncOver40(), 0)
+		return t.checkExpect(this.andrew.femaleAncOver40(), 7) && t.checkExpect(this.bree.femaleAncOver40(), 3)
+				&& t.checkExpect(this.darcy.femaleAncOver40(), 1) && t.checkExpect(this.enid.femaleAncOver40(), 0)
 				&& t.checkExpect(new Unknown().femaleAncOver40(), 0);
 	}
 
 	boolean testNumGens(Tester t) {
-		return t.checkExpect(this.andrew.numTotalGens(), 3)
-				&& t.checkExpect(this.andrew.numPartialGens(), 5)
-				&& t.checkExpect(this.enid.numTotalGens(), 1)
-				&& t.checkExpect(this.enid.numPartialGens(), 1)
-				&& t.checkExpect(new Unknown().numTotalGens(), 0)
-				&& t.checkExpect(new Unknown().numPartialGens(), 0);
+		return t.checkExpect(this.andrew.numTotalGens(), 3) && t.checkExpect(this.andrew.numPartialGens(), 5)
+				&& t.checkExpect(this.enid.numTotalGens(), 1) && t.checkExpect(this.enid.numPartialGens(), 1)
+				&& t.checkExpect(new Unknown().numTotalGens(), 0) && t.checkExpect(new Unknown().numPartialGens(), 0);
 	}
 
 	boolean testWellFormed(Tester t) {
-		return t.checkExpect(this.andrew.wellFormed(), true)
-				&& t.checkExpect(new Unknown().wellFormed(), true) && t.checkExpect(
-						new Person("Zane", 2000, true, this.andrew, this.bree).wellFormed(), false);
+		return t.checkExpect(this.andrew.wellFormed(), true) && t.checkExpect(new Unknown().wellFormed(), true)
+				&& t.checkExpect(new Person("Zane", 2000, true, this.andrew, this.bree).wellFormed(), false);
 	}
+
 
 //	boolean testAncNames(Tester t) {
 //		return t.checkExpect(this.david.ancNames(),
