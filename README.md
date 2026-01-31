@@ -1,4 +1,5 @@
-# Summary
+# Computer Science Foundations for Engineers
+## Summary
 This is a personal curriculum, shared publicly for transparency and reuse.
 
 This curriculum is a **professional-grade education in computer science**, designed for
