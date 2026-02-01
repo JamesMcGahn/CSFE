@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+igraph = "*"
+cairocffi = "*"
+pycairo = "*"
+networkx = "*"
+matplotlib = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
