@@ -23,7 +23,7 @@ class Node:
         if neighbor in self.edges:
             del self.edges[neighbor]
 
-    def get_edge_list(self) -> list:
+    def get_edge_list(self) -> list[Edge]:
         return list(self.edges.values())
 
     def get_sorted_edge_list(self) -> list[Edge]:
@@ -34,3 +34,15 @@ class Node:
         for n in neighbors:
             result.append(self.edges[n])
         return result
+
+    def get_neighbors(self) -> set[int]:
+        neighbors: set = set()
+        for edge in self.edges.values():
+            neighbors.add(edge.to_node)
+        return neighbors
+
+    def get_out_neighbors(self) -> set[int]:
+        neighbors: set = set()
+        for edge in self.edges.values():
+            neighbors.add(edge.to_node)
+        return neighbors

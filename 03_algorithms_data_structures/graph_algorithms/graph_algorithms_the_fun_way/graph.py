@@ -57,3 +57,32 @@ class Graph:
             for edge in node.edges.values():
                 graph_copy.insert_edge(edge.from_node, edge.to_node, edge.weight)
         return graph_copy
+
+    def get_in_neighbors(self, target: int) -> set[int]:
+        neighbors: set = set()
+        for node in self.nodes:
+            if target in node.edges:
+                neighbors.add(node.index)
+        return neighbors
+
+    def make_undirected_neighborhood_subgraph(self, index: int, closed: bool):
+        if self.undirected:
+            raise ValueError
+
+        nodes_to_use: set[int] = self.nodes[index].get_neighbors()
+        if closed:
+            nodes_to_use.add(index)
+
+        index_map = {}
+        for new_index, old_index in enumerate(nodes_to_use):
+            index_map[old_index] = new_index
+
+        new_graph: Graph = Graph(len(nodes_to_use), undirected=True)
+        for node in nodes_to_use:
+            for edge in self.nodes[node].get_edge_list():
+                if edge.to_node in nodes_to_use and edge.to_node > node:
+                    new_index_1 = index_map[node]
+                    new_index_2 = index_map[edge.to_node]
+                    new_graph.insert_edge(new_index_1, new_index_2, edge.weight)
+
+        return new_graph
