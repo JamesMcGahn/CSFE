@@ -1,5 +1,5 @@
 from typing import Any, Union
-from .edge import Edge
+from edge import Edge
 
 
 class Node:
