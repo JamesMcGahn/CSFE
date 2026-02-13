@@ -1,46 +1,13 @@
 # Computer Science Foundations for Engineers
 ## Summary
-This is a personal curriculum, shared publicly for transparency and reuse.
-
-This curriculum is a **professional-grade education in computer science**, designed for
-working software engineers who want deep, durable foundations and senior/staff-level judgment.
-
-It is inspired by OSSU’s original goal — a complete CS education — but **restructured for
-learning efficiency, transfer to real systems, and modern engineering practice**.
-
-Unlike the original OSSU curriculum, this version:
-- Is **not restricted to free materials**
-- Prioritizes **best-in-class books, courses, and lectures**
-- Emphasizes **thinking discipline, system design, and tradeoff reasoning**
-- Separates **theory, practice, and application intentionally**
-
-This curriculum is **not interview prep** and **not framework training**.
-It is a long-horizon, depth-first path intended to build the kind of understanding that:
-- scales across languages and paradigms
-- improves architectural judgment
-- supports long-term technical leadership
+This is a personal computer science curriculum I’m following and sharing publicly for transparency and reuse.
 
 
-## Why this repo exists
+The structure is inspired by OSSU’s goal of a complete CS education, but adapted for a working engineer:
+- is not limited to free materials
+- prioritizes high-quality books and courses
+- intentionally separates theory, practice, and application
 
-This repository serves three purposes:
-
-1. **Personal tracking**  
-   A structured, honest record of my computer science study path,
-   including what I studied, why I chose it, and what it was meant to develop.
-
-2. **Professional signal**  
-   A transparent demonstration of foundational CS knowledge, learning discipline,
-   and long-term technical investment.
-
-3. **A pragmatic OSSU reinterpretation**  
-   A reference for others who value OSSU’s goals but struggle with:
-   - free-only constraints
-   - academic pacing
-   - lack of focus on engineering judgment
-
-This is not a replacement for OSSU, nor a criticism of it.
-It is a **quality-first, experience-aware reinterpretation** of the same ideals.
 
 # Curriculum
 
@@ -48,6 +15,8 @@ It is a **quality-first, experience-aware reinterpretation** of the same ideals.
 > Note: Tiers represent conceptual progression, not strict sequencing.
 > Some tiers intentionally overlap in practice.
 
+>The tiers represent conceptual layers. They are not strict gates.
+>Many topics are studied in parallel and revisited at increasing depth.
 
 - [Mathematics for Computer Science & Engineering](#mathematics-for-computer-science--engineering)
 - [Tier 0 — Prerequisites](#tier-0--prerequisites)
@@ -55,12 +24,12 @@ It is a **quality-first, experience-aware reinterpretation** of the same ideals.
 - [Tier 2 — Programming in the Large (Paradigm Bridge)](#tier-2--programming-in-the-large-paradigm-bridge)
 - [Tier 3 — Algorithms & Data Structures](#tier-3--algorithms--data-structures)
 - [Tier 4 — Formal Reasoning For Engineers](#tier-4--formal-reasoning-for-engineers) 
-- [Tier 5 — Computer Systems Fundamentals](#tier-5--computer-systems-fundamentals)
+- [Tier 5 — Computer Systems (Architecture & Memory)](#tier-5--computer-systems-architecture--memory)
 - [Tier 6 — Operating Systems & Concurrency](#tier-6--operating-systems--concurrency)
 - [Tier 7 — Networking & Distributed Systems](#tier-7--networking--distributed-systems)
 - [Tier 8 — Databases & Data Systems](#tier-8--databases--data-systems)
 - [Tier 9 — Software Design & Architecture](#tier-9--software-design--architecture)
-- [Tier 10 — Operating Systems in Production](#tier-10--operating-systems-in-production)
+- [Tier 10 — Production Systems & Reliability](#tier-10--production-systems--reliability)
 - [Tier 11 — Security & Risk](#tier-11--security--risk)
 - [Tier 12 — Engineering Leadership & Judgment](#tier-12--engineering-leadership--judgment)
 
@@ -198,7 +167,7 @@ Foundations I
 
 ---
 
-## Tier 5 — Computer Systems Fundamentals
+## Tier 5 — Computer Systems (Architecture & Memory)
 > What code runs on
 
 - Processes and threads
@@ -253,7 +222,7 @@ Foundations I
 
 ---
 
-## Tier 10 — Operating Systems in Production
+## Tier 10 — Production Systems & Reliability
 > Operating systems in production
 
 - Profiling and benchmarking
