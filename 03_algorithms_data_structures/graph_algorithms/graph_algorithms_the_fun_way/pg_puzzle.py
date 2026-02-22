@@ -1,3 +1,4 @@
+import math
 from typing import Union
 from queue import Queue
 from pg_state import PGState
@@ -115,4 +116,18 @@ def solve_pg_bfs():
         print(f"Step {i}: {g.nodes[n].label}")
 
 
-solve_pg_bfs()
+def pg_generate_heuristic(g: Graph) -> list[float]:
+    heuristic = [0.0] * g.num_nodes
+    for node in g.nodes:
+        state: PGState = node.label
+        num_left: int = state.guards_left + state.prisoners_left
+        min_trips_l_to_r: int = math.ceil(num_left / 2.0)
+        min_trips_r_to_l: int = max(0, min_trips_l_to_r - 1)
+        if not state.boat_side == "L" and min_trips_l_to_r > 0:
+            min_trips_r_to_l += 1
+        heuristic[node.index] = min_trips_l_to_r + min_trips_r_to_l
+    return heuristic
+
+
+if __name__ == "__main__":
+    solve_pg_bfs()
