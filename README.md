@@ -87,7 +87,7 @@ Foundations I
 | Completed | Resource                                                                           | Institution / Author | Type          | Focus                                              |                             Completed Assignments                             |
 | :-------: | ---------------------------------------------------------------------------------- | -------------------- | ------------- | -------------------------------------------------- | :---------------------------------------------------------------------------: |
 |    ✅     | [Python for Everybody](https://www.py4e.com/lessons)                               | Dr. Chuck (UMich)    | Book / Course | Basic programming, data handling, scripting        |                                      n/a                                      |
-|    ✅     | [CS50P: Introduction to Programming with Python](https://cs50.harvard.edu/python/) | Harvard              | Course        | Program structure, problem solving, Python fluency | [assignments](https://github.com/JamesMcGahn/OSSU/tree/main/00_intro_cs/6001) |
+|    ✅     | [CS50P: Introduction to Programming with Python](https://cs50.harvard.edu/python/) | Harvard              | Course        | Program structure, problem solving, Python fluency | [assignments](https://github.com/JamesMcGahn/CSFE/tree/main/00_intro_cs/6001) |
 
 ---
 
@@ -102,7 +102,7 @@ Foundations I
 | Completed | Resource                                                                 | Institution / Author      | Type          | Focus                                                                                         |                                          Completed Assignments                                          |
 | :-------: | ------------------------------------------------------------------------ | ------------------------- | ------------- | --------------------------------------------------------------------------------------------- | :-----------------------------------------------------------------------------------------------------: |
 |    ⬜     | [How to Design Programs, 2e](https://htdp.org/2023-8-14/Book/index.html) | Matthias Felleisen et al. | Book / Course | data-driven design, structural recursion, correctness, templates, and systematic construction | [assignments](https://github.com/JamesMcGahn/OSSU/tree/main/01_core_programming/how_to_design_programs) |
-|    ⬜     | [SICP, 2e](https://web.mit.edu/6.001/6.037/sicp.pdf)                     | Harold Abelson et al.     | Book / Course | abstraction-driven computation, evaluation, language design, and controlling complexity       |          [assignments](https://github.com/JamesMcGahn/OSSU/tree/main/01_core_programming/scip)          |
+|    ⬜     | [SICP, 2e](https://web.mit.edu/6.001/6.037/sicp.pdf)                     | Harold Abelson et al.     | Book / Course | abstraction-driven computation, evaluation, language design, and controlling complexity       |          [assignments](https://github.com/JamesMcGahn/CSFE/tree/main/01_core_programming/scip)          |
 
 **Study notes**
 
@@ -120,4 +120,4 @@ Foundations I
 
 | Completed | Resource                                                                   | Institution / Author | Type          | Focus                                                                                             |                                                  Completed Assignments                                                  |
 | :-------: | -------------------------------------------------------------------------- | -------------------- | ------------- | ------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------: |
-|    ⬜     | [Graph Algorithms the Fun Way](https://htdp.org/2023-8-14/Book/index.html) | Jeremy Kubica        | Book / Course | Graph Basics,Search and Shortest Paths, Connectivity and Ordering,Max-Flow and Bipartite Matching | [assignments](https://github.com/JamesMcGahn/OSSU/tree/main/03_algorithms_data_structures/graph_algorithms_the_fun_way) |
+|    ⬜     | [Graph Algorithms the Fun Way](https://htdp.org/2023-8-14/Book/index.html) | Jeremy Kubica        | Book / Course | Graph Basics,Search and Shortest Paths, Connectivity and Ordering,Max-Flow and Bipartite Matching | [assignments](https://github.com/JamesMcGahn/CSFE/tree/main/03_algorithms_data_structures/graph_algorithms/graph_algorithms_the_fun_way) |
