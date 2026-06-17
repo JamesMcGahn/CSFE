@@ -22,7 +22,7 @@ The structure is inspired by OSSU’s goal of a complete CS education, but adapt
 
 - [Mathematics for Computer Science & Engineering](#mathematics-for-computer-science--engineering)
 - [Tier 0 — Prerequisites](#tier-0--prerequisites)
-- [Tier 1 — Core Programming & Data Modeling](#tier-1--core-programming)
+- [Tier 1 — Core Programming](#tier-1--core-programming)
 - [Tier 3 — Algorithms & Data Structures](#tier-3--algorithms--data-structures)
 
 ## Mathematics for Computer Science & Engineering
@@ -91,7 +91,7 @@ Foundations I
 
 ---
 
-## Tier 1 — Core Programming & Data Modeling
+## Tier 1 — Core Programming
 
 > Purpose:
 > Establish disciplined reasoning about data and behavior that transfers
